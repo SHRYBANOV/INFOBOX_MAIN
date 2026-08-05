@@ -1,0 +1,26 @@
+specVersion: "4.0"
+metadata:
+  name: infobox2main
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          destination: MY_DESTINATION
+          url: https://uad.sapsystems.pl
+          client: '400'
+          scp: true
+        app:
+          name: Z_INFOBMAIN_UI
+          description: Инфобокс
+          package: $TMP
+          transport: ''
+        exclude:
+          - /test/
+          - /localService/

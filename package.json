@@ -1,0 +1,39 @@
+{
+  "name": "infobox2_main",
+  "version": "0.0.1",
+  "description": "An SAP Fiori application.",
+  "keywords": [
+    "ui5",
+    "openui5",
+    "sapui5"
+  ],
+  "main": "webapp/index.html",
+  "dependencies": {
+    "@capacitor/android": "^8.5.0",
+    "@capacitor/cli": "^8.5.0",
+    "@capacitor/core": "^8.5.0"
+  },
+  "devDependencies": {
+    "@sap-ux/eslint-plugin-fiori-tools": "^10.0.0",
+    "@sap-ux/ui5-middleware-fe-mockserver": "2",
+    "@sap/ux-ui5-tooling": "1",
+    "@ui5/cli": "^4.0.33",
+    "eslint": "^10",
+    "rimraf": "^5.0.5"
+  },
+  "scripts": {
+    "start": "fiori run --config ./ui5.yaml --open \"test/flpSandbox.html?sap-ui-xx-viewCache=false#INFOBOX_MAIN-DISPLAY\"",
+    "start-noflp": "fiori run --config ./ui5.yaml --open \"index.html\"",
+    "start-mock": "fiori run --config ./ui5-mock.yaml --open \"test/flpSandbox.html?sap-ui-xx-viewCache=false#app-preview\"",
+    "start-local": "fiori run --config ./ui5-local.yaml --open \"test/flpSandbox.html?sap-ui-xx-viewCache=false#app-preview\"",
+    "build": "ui5 build --config=ui5.yaml --clean-dest --dest dist",
+    "lint": "eslint ./",
+    "deploy": "npm run build && npx fiori deploy --config ui5-deploy.yaml",
+    "deploy-config": "npx fiori add deploy-config",
+    "deploy-test": "npm run build && npx fiori deploy --config ui5-deploy.yaml --testMode true",
+    "undeploy": "npx fiori undeploy --config ui5-deploy.yaml",
+    "int-test": "fiori run --config ./ui5-mock.yaml --open \"/test/integration/opaTests.qunit.html\""
+  },
+  "sapuxLayer": "CUSTOMER_BASE",
+  "sapux": true
+}
