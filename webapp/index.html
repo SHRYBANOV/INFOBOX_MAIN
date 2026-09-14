@@ -2,26 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Infobox</title>
     <style>
         html, body, body > div, #container, #container-uiarea {
             height: 100%;
+            margin: 0;
+            padding: 0;
         }
     </style>
     <script
         id="sap-ui-bootstrap"
-        src="resources/sap-ui-core.js"
+        src="https://ui5.sap.com/1.150.1/resources/sap-ui-core.js"
         data-sap-ui-theme="sap_horizon"
-        data-sap-ui-resource-roots='{
-            "infobox2main": "./"
-        }'
+        data-sap-ui-resource-roots='{"infobox2main": "./"}'
         data-sap-ui-on-init="module:sap/ui/core/ComponentSupport"
         data-sap-ui-compat-version="edge"
         data-sap-ui-async="true"
         data-sap-ui-frame-options="trusted"
-    ></script>
+        data-sap-ui-libs="sap.m,sap.ui.core,sap.f,sap.fe.templates">
+    </script>
 </head>
 <body class="sapUiBody sapUiSizeCompact" id="content">
     <div
@@ -29,7 +30,7 @@
         data-name="infobox2main"
         data-id="container"
         data-settings='{"id" : "infobox2main"}'
-        data-handle-validation="true"
-    ></div>
+        style="height: 100%">
+    </div>
 </body>
 </html>
