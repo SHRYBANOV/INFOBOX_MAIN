@@ -3,35 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Infobox</title>
-    
-    <!-- Мобильная консоль для отладки (появится кнопка-шестеренка на экране) -->
+
+    <!-- Мобильная консоль (пробуем загрузить) -->
     <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
-    <script>eruda.init();</script>
+    <script>
+        if (window.eruda) {
+            eruda.init();
+            console.log("Eruda initialized");
+        } else {
+            // Если интернет не подцепился, хотя бы покрасим фон в синий, чтобы понять это
+            window.addEventListener('load', function() {
+                document.body.style.backgroundColor = "blue";
+            });
+        }
+    </script>
 
     <style>
-        html, body, body > div, #container, #container-uiarea {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
+        html, body { height: 100%; margin: 0; padding: 0; background-color: white; }
     </style>
 
-    <!-- Загрузка библиотеки UI5 из CDN -->
+    <!-- Загружаем СТАБИЛЬНУЮ версию 1.120.0 (она точно есть на серверах SAP) -->
     <script
         id="sap-ui-bootstrap"
-        src="https://ui5.sap.com/1.150.1/resources/sap-ui-core.js"
+        src="https://sdk.openui5.org/resources/sap-ui-core.js"
         data-sap-ui-theme="sap_horizon"
         data-sap-ui-resource-roots='{"infobox2main": "./"}'
         data-sap-ui-on-init="module:sap/ui/core/ComponentSupport"
         data-sap-ui-compat-version="edge"
         data-sap-ui-async="true"
-        data-sap-ui-frame-options="trusted"
         data-sap-ui-libs="sap.m,sap.ui.core,sap.f,sap.fe.templates,sap.ushell,sap.ui.fl">
     </script>
 </head>
-<body class="sapUiBody sapUiSizeCompact" id="content">
+<body class="sapUiBody" id="content">
     <div
         data-sap-ui-component
         data-name="infobox2main"
