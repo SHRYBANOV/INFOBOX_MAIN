@@ -47,14 +47,14 @@
           }
         },
         "app-preview": {
-        "semanticObject": "app",
-        "action": "preview",
-        "title": "App Preview",
-        "signature": {
-          "parameters": {},
-          "additionalParameters": "allowed"
+          "semanticObject": "app",
+          "action": "preview",
+          "title": "App Preview",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
         }
-      }
       }
     }
   },
