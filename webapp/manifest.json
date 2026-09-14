@@ -24,7 +24,7 @@
         }
       },
       "mainService": {
-        "uri": "/sap/opu/odata4/sap/zinfobox_b_sv4/srvd/sap/zinfobox_b/0001/",
+        "uri": "https://uad.sapsystems.pl/sap/opu/odata4/sap/zinfobox_b_sv4/srvd/sap/zinfobox_b/0001/",
         "type": "OData",
         "settings": {
           "annotations": [
