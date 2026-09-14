@@ -1,11 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>TEST</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Infobox</title>
+    
+    <!-- Мобильная консоль для отладки (появится кнопка-шестеренка на экране) -->
+    <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+    <script>eruda.init();</script>
+
+    <style>
+        html, body, body > div, #container, #container-uiarea {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+    <!-- Загрузка библиотеки UI5 из CDN -->
+    <script
+        id="sap-ui-bootstrap"
+        src="https://ui5.sap.com/1.150.1/resources/sap-ui-core.js"
+        data-sap-ui-theme="sap_horizon"
+        data-sap-ui-resource-roots='{"infobox2main": "./"}'
+        data-sap-ui-on-init="module:sap/ui/core/ComponentSupport"
+        data-sap-ui-compat-version="edge"
+        data-sap-ui-async="true"
+        data-sap-ui-frame-options="trusted"
+        data-sap-ui-libs="sap.m,sap.ui.core,sap.f,sap.fe.templates,sap.ushell,sap.ui.fl">
+    </script>
 </head>
-<body style="background-color: red; color: white; font-size: 50px; text-align: center; padding-top: 100px;">
-    <h1>РАБОТАЕТ!</h1>
-    <p style="font-size: 20px;">Если ты видишь этот красный экран, значит код обновляется.</p>
+<body class="sapUiBody sapUiSizeCompact" id="content">
+    <div
+        data-sap-ui-component
+        data-name="infobox2main"
+        data-id="container"
+        data-settings='{"id" : "infobox2main"}'
+        style="height: 100%">
+    </div>
 </body>
 </html>
